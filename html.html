@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de Magnitudes Físicas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+
+    <nav class="barra-superior">
+        <span class="marca">Calculadora</span>
+        <span class="actividad">Momento evaluativo</span>
+    </nav>
+
+    <section class="presentacion">
+
+        <div>
+            <p class="subtitulo">Construcción de Algoritmos</p>
+
+            <h1>Calculadora de Magnitudes Físicas</h1>
+
+            <p class="texto-presentacion">
+                Aplicación web académica creada para el análisis y resolución
+                de operaciones relacionadas con magnitudes físicas.
+            </p>
+
+            <p class="autor">
+                Autor: <strong>Jesus Alberto Gamez Romero</strong>
+            </p>
+        </div>
+
+        <div class="panel-formulas">
+
+            <h2>Fórmulas incluidas</h2>
+
+            <ul>
+                <li>Velocidad</li>
+                <li>Aceleración</li>
+                <li>Fuerza</li>
+                <li>Trabajo</li>
+                <li>Energía cinética</li>
+                <li>Energía potencial</li>
+                <li>Densidad</li>
+                <li>Presión</li>
+                <li>Carga eléctrica</li>
+                <li>Ley de Ohm</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+</header>
+
+<main class="contenedor">
+
+    <section class="bloque-instrucciones">
+
+        <h2>Ingrese los datos y calcule</h2>
+
+    </section>
+
+    <section class="grid-calculadoras">
+
+        <!-- VELOCIDAD -->
+        <article class="tarjeta">
+
+            <span class="numero">01</span>
+
+            <h2>Velocidad</h2>
+
+            <p class="formula">v = d / t</p>
+
+            <label>Distancia (m)</label>
+            <input type="number" id="distanciaVelocidad">
+
+            <label>Tiempo (s)</label>
+            <input type="number" id="tiempoVelocidad">
+
+            <button onclick="calcularVelocidad()">Calcular</button>
+
+            <p id="resultadoVelocidad" class="resultado"></p>
+
+        </article>
+
+        <!-- ACELERACIÓN -->
+        <article class="tarjeta">
+
+            <span class="numero">02</span>
+
+            <h2>Aceleración</h2>
+
+            <p class="formula">a = Δv / Δt</p>
+
+            <label>Cambio de velocidad</label>
+            <input type="number" id="cambioVelocidad">
+
+            <label>Cambio de tiempo</label>
+            <input type="number" id="cambioTiempo">
+
+            <button onclick="calcularAceleracion()">Calcular</button>
+
+            <p id="resultadoAceleracion" class="resultado"></p>
+
+        </article>
+
+        <!-- FUERZA -->
+        <article class="tarjeta">
+
+            <span class="numero">03</span>
+
+            <h2>Fuerza</h2>
+
+            <p class="formula">F = m · a</p>
+
+            <label>Masa (kg)</label>
+            <input type="number" id="masaFuerza">
+
+            <label>Aceleración (m/s²)</label>
+            <input type="number" id="aceleracionFuerza">
+
+            <button onclick="calcularFuerza()">Calcular</button>
+
+            <p id="resultadoFuerza" class="resultado"></p>
+
+        </article>
+
+        <!-- TRABAJO -->
+        <article class="tarjeta">
+
+            <span class="numero">04</span>
+
+            <h2>Trabajo</h2>
+
+            <p class="formula">W = F · d · cos(θ)</p>
+
+            <label>Fuerza (N)</label>
+            <input type="number" id="fuerzaTrabajo">
+
+            <label>Distancia (m)</label>
+            <input type="number" id="distanciaTrabajo">
+
+            <label>Ángulo (°)</label>
+            <input type="number" id="anguloTrabajo">
+
+            <button onclick="calcularTrabajo()">Calcular</button>
+
+            <p id="resultadoTrabajo" class="resultado"></p>
+
+        </article>
+
+        <!-- ENERGÍA CINÉTICA -->
+        <article class="tarjeta">
+
+            <span class="numero">05</span>
+
+            <h2>Energía Cinética</h2>
+
+            <p class="formula">K = ½mv²</p>
+
+            <label>Masa (kg)</label>
+            <input type="number" id="masaCinetica">
+
+            <label>Velocidad (m/s)</label>
+            <input type="number" id="velocidadCinetica">
+
+            <button onclick="calcularEnergiaCinetica()">Calcular</button>
+
+            <p id="resultadoCinetica" class="resultado"></p>
+
+        </article>
+
+        <!-- ENERGÍA POTENCIAL -->
+        <article class="tarjeta">
+
+            <span class="numero">06</span>
+
+            <h2>Energía Potencial</h2>
+
+            <p class="formula">U = mgh</p>
+
+            <label>Masa (kg)</label>
+            <input type="number" id="masaPotencial">
+
+            <label>Gravedad (m/s²)</label>
+            <input type="number" id="gravedadPotencial" value="9.8">
+
+            <label>Altura (m)</label>
+            <input type="number" id="alturaPotencial">
+
+            <button onclick="calcularEnergiaPotencial()">Calcular</button>
+
+            <p id="resultadoPotencial" class="resultado"></p>
+
+        </article>
+
+        <!-- DENSIDAD -->
+        <article class="tarjeta">
+
+            <span class="numero">07</span>
+
+            <h2>Densidad</h2>
+
+            <p class="formula">ρ = m / V</p>
+
+            <label>Masa (kg)</label>
+            <input type="number" id="masaDensidad">
+
+            <label>Volumen (m³)</label>
+            <input type="number" id="volumenDensidad">
+
+            <button onclick="calcularDensidad()">Calcular</button>
+
+            <p id="resultadoDensidad" class="resultado"></p>
+
+        </article>
+
+        <!-- PRESIÓN -->
+        <article class="tarjeta">
+
+            <span class="numero">08</span>
+
+            <h2>Presión</h2>
+
+            <p class="formula">P = F / A</p>
+
+            <label>Fuerza (N)</label>
+            <input type="number" id="fuerzaPresion">
+
+            <label>Área (m²)</label>
+            <input type="number" id="areaPresion">
+
+            <button onclick="calcularPresion()">Calcular</button>
+
+            <p id="resultadoPresion" class="resultado"></p>
+
+        </article>
+
+        <!-- CARGA ELÉCTRICA -->
+        <article class="tarjeta">
+
+            <span class="numero">09</span>
+
+            <h2>Carga Eléctrica</h2>
+
+            <p class="formula">q = I · t</p>
+
+            <label>Corriente (A)</label>
+            <input type="number" id="corrienteCarga">
+
+            <label>Tiempo (s)</label>
+            <input type="number" id="tiempoCarga">
+
+            <button onclick="calcularCargaElectrica()">Calcular</button>
+
+            <p id="resultadoCarga" class="resultado"></p>
+
+        </article>
+
+        <!-- LEY DE OHM -->
+        <article class="tarjeta">
+
+            <span class="numero">10</span>
+
+            <h2>Ley de Ohm</h2>
+
+            <p class="formula">V = I · R</p>
+
+            <label>Corriente (A)</label>
+            <input type="number" id="corrienteOhm">
+
+            <label>Resistencia (Ω)</label>
+            <input type="number" id="resistenciaOhm">
+
+            <button onclick="calcularLeyOhm()">Calcular</button>
+
+            <p id="resultadoOhm" class="resultado"></p>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+
+</footer>
+
+<script>
+
+function calcularVelocidad() {
+
+    let d = parseFloat(document.getElementById("distanciaVelocidad").value);
+    let t = parseFloat(document.getElementById("tiempoVelocidad").value);
+
+    let resultado = d / t;
+
+    document.getElementById("resultadoVelocidad").innerHTML =
+    "Velocidad = " + resultado.toFixed(2) + " m/s";
+}
+
+function calcularAceleracion() {
+
+    let dv = parseFloat(document.getElementById("cambioVelocidad").value);
+    let dt = parseFloat(document.getElementById("cambioTiempo").value);
+
+    let resultado = dv / dt;
+
+    document.getElementById("resultadoAceleracion").innerHTML =
+    "Aceleración = " + resultado.toFixed(2) + " m/s²";
+}
+
+function calcularFuerza() {
+
+    let m = parseFloat(document.getElementById("masaFuerza").value);
+    let a = parseFloat(document.getElementById("aceleracionFuerza").value);
+
+    let resultado = m * a;
+
+    document.getElementById("resultadoFuerza").innerHTML =
+    "Fuerza = " + resultado.toFixed(2) + " N";
+}
+
+function calcularTrabajo() {
+
+    let f = parseFloat(document.getElementById("fuerzaTrabajo").value);
+    let d = parseFloat(document.getElementById("distanciaTrabajo").value);
+    let angulo = parseFloat(document.getElementById("anguloTrabajo").value);
+
+    let radianes = angulo * Math.PI / 180;
+
+    let resultado = f * d * Math.cos(radianes);
+
+    document.getElementById("resultadoTrabajo").innerHTML =
+    "Trabajo = " + resultado.toFixed(2) + " J";
+}
+
+function calcularEnergiaCinetica() {
+
+    let m = parseFloat(document.getElementById("masaCinetica").value);
+    let v = parseFloat(document.getElementById("velocidadCinetica").value);
+
+    let resultado = 0.5 * m * (v * v);
+
+    document.getElementById("resultadoCinetica").innerHTML =
+    "Energía Cinética = " + resultado.toFixed(2) + " J";
+}
+
+function calcularEnergiaPotencial() {
+
+    let m = parseFloat(document.getElementById("masaPotencial").value);
+    let g = parseFloat(document.getElementById("gravedadPotencial").value);
+    let h = parseFloat(document.getElementById("alturaPotencial").value);
+
+    let resultado = m * g * h;
+
+    document.getElementById("resultadoPotencial").innerHTML =
+    "Energía Potencial = " + resultado.toFixed(2) + " J";
+}
+
+function calcularDensidad() {
+
+    let m = parseFloat(document.getElementById("masaDensidad").value);
+    let v = parseFloat(document.getElementById("volumenDensidad").value);
+
+    let resultado = m / v;
+
+    document.getElementById("resultadoDensidad").innerHTML =
+    "Densidad = " + resultado.toFixed(2) + " kg/m³";
+}
+
+function calcularPresion() {
+
+    let f = parseFloat(document.getElementById("fuerzaPresion").value);
+    let a = parseFloat(document.getElementById("areaPresion").value);
+
+    let resultado = f / a;
+
+    document.getElementById("resultadoPresion").innerHTML =
+    "Presión = " + resultado.toFixed(2) + " Pa";
+}
+
+function calcularCargaElectrica() {
+
+    let i = parseFloat(document.getElementById("corrienteCarga").value);
+    let t = parseFloat(document.getElementById("tiempoCarga").value);
+
+    let resultado = i * t;
+
+    document.getElementById("resultadoCarga").innerHTML =
+    "Carga Eléctrica = " + resultado.toFixed(2) + " C";
+}
+
+function calcularLeyOhm() {
+
+    let i = parseFloat(document.getElementById("corrienteOhm").value);
+    let r = parseFloat(document.getElementById("resistenciaOhm").value);
+
+    let resultado = i * r;
+
+    document.getElementById("resultadoOhm").innerHTML =
+    "Voltaje = " + resultado.toFixed(2) + " V";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+@@ -0,0 +1,57 @@
+# Calculadora de Magnitudes Físicas
+## Nombre completo
+Natalia Marcela Caballero Perez
+## Descripción del proyecto
+Este proyecto corresponde a una calculadora web de magnitudes físicas fundamentales, desarrollada con HTML, CSS y JavaScript.
+La aplicación permite realizar diez cálculos físicos mediante una interfaz clara, moderna y funcional. Cada operación cuenta con campos de entrada, botón de cálculo, validaciones básicas y presentación del resultado con su unidad de medida correspondiente.
+## Magnitudes físicas incluidas
+1. Velocidad: v = d / t
+2. Aceleración: a = Δv / Δt
+3. Fuerza: F = m · a
+4. Trabajo: W = F · d · cos(θ)
+5. Energía cinética: K = ½ · m · v²
+6. Energía potencial gravitatoria: U = m · g · h
+7. Densidad: ρ = m / V
+8. Presión: P = F / A
+9. Carga eléctrica: q = I · t
+10. Ley de Ohm: V = I · R
+## Estructura del proyecto
+```text
+calculadora-fisica-natalia-marcela-caballero-perez/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+## Instrucciones para ejecutar
+1. Descargar o clonar el repositorio.
+2. Abrir la carpeta del proyecto.
+3. Ejecutar el archivo `index.html` en un navegador web.
+4. Ingresar los valores solicitados.
+5. Presionar el botón de cálculo correspondiente.
+## Repositorio sugerido
+```text
+calculadora-fisica-natalia-marcela-caballero-perez
+```
+## Tecnologías utilizadas
+HTML, CSS y JavaScript.
+## Validaciones implementadas
